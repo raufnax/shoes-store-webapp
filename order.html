@@ -26,18 +26,9 @@
   <h1>Оформление заказа</h1>
   <form id="order-form">
     <p id="product-name"></p>
-    
+
     <label for="size">Выберите размер</label>
-    <select id="size" name="size" required>
-      <option value="">—</option>
-      <option>36</option>
-      <option>37</option>
-      <option>38</option>
-      <option>39</option>
-      <option>40</option>
-      <option>41</option>
-      <option>42</option>
-    </select>
+    <select id="size" name="size" required></select>
 
     <label for="address">Адрес доставки</label>
     <input type="text" id="address" name="address" required>
@@ -53,8 +44,22 @@
     const product = params.get('product') || 'Товар';
     const brand = params.get('brand') || '';
     const category = params.get('category') || '';
+    const sizes = (params.get('sizes') || '').split('|');
 
     document.getElementById('product-name').textContent = Вы заказываете: ${brand} ${product};
+
+    const sizeSelect = document.getElementById('size');
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = '—';
+    sizeSelect.appendChild(defaultOption);
+
+    sizes.forEach(size => {
+      const option = document.createElement('option');
+      option.value = size;
+      option.textContent = size;
+      sizeSelect.appendChild(option);
+    });
 
     document.getElementById('order-form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -73,10 +78,10 @@
 `;
 
       if (window.Telegram.WebApp) {
-        Telegram.WebApp.sendData(message); // Передаём боту
-        Telegram.WebApp.close(); // Закрываем WebApp
+        Telegram.WebApp.sendData(message);
+        Telegram.WebApp.close();
       } else {
-        alert("Telegram WebApp API недоступен. Проверьте запуск через Telegram.");
+        alert("Telegram WebApp API недоступен. Запустите через Telegram.");
       }
     });
   </script>
