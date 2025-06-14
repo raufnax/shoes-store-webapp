@@ -31,16 +31,15 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
-    console.log("Категория из URL:", category);
 
     const brandList = document.getElementById('brand-list');
     const title = document.getElementById('category-title');
 
     const brandsByCategory = {
-      krossovki: ['Nike', 'Adidas', 'Puma'],
-      kedy: ['Converse', 'Vans'],
-      rezina: ['Demar', 'Nordman'],
-      ryukzaki: ['Eastpak', 'Totto']
+      krossovki: ['Nike', 'Adidas'],
+      kedy: ['Vans'],
+      rezina: ['Demar'],
+      ryukzaki: ['Totto']
     };
 
     const titles = {
@@ -52,12 +51,9 @@
 
     title.textContent = titles[category] || 'Бренды';
 
-    const brands = brandsByCategory[category] || [];
-    console.log("Бренды:", brands);
-
-    brands.forEach(function(brand) {
+    (brandsByCategory[category] || []).forEach(brand => {
       const a = document.createElement('a');
-      a.href = `products.html?category=${category}&brand=${brand}`;
+      a.href = products.html?category=${category}&brand=${brand};
       a.textContent = brand;
       a.className = 'brand';
       brandList.appendChild(a);
