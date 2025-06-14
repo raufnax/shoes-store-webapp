@@ -1,0 +1,53 @@
+[
+  {
+    "category": "krossovki",
+    "brand": "Nike",
+    "name": "Air Max 90",
+    "sizes": [
+      "40",
+      "41",
+      "42"
+    ],
+    "image": "static/nike1.jpg"
+  },
+  {
+    "category": "krossovki",
+    "brand": "Adidas",
+    "name": "Ultraboost",
+    "sizes": [
+      "41",
+      "42"
+    ],
+    "image": "static/adidas1.jpg"
+  },
+  {
+    "category": "kedy",
+    "brand": "Vans",
+    "name": "Old Skool",
+    "sizes": [
+      "38",
+      "39"
+    ],
+    "image": "static/vans1.jpg"
+  },
+  {
+    "category": "rezina",
+    "brand": "Demar",
+    "name": "Storm Boots",
+    "sizes": [
+      "39",
+      "40",
+      "41"
+    ],
+    "image": "static/demar1.jpg"
+  },
+  {
+    "category": "ryukzaki",
+    "brand": "Totto",
+    "name": "StreetPack",
+    "sizes": [
+      "универсальный"
+    ],
+    "image": "static/totto1.jpg"
+  }
+]
